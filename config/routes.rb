@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'home/about'
+  get 'home/lookup'
+  post "/home/lookup" => 'home/lookup'
+  root 'home#index'
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -9,7 +16,7 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #   get 'products/:id/purchase' => 'catalog#purchclease', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
